@@ -1,0 +1,13 @@
+---
+description: Luminet Design Library conventions
+globs: src/**/*.{ts,tsx},theme.css
+alwaysApply: false
+---
+
+# @luminet/design-library
+
+- TypeScript + React 18 peers; ship via tsup (ESM, CJS, d.ts).
+- Tailwind v4: semantic tokens in `theme.css` only — no raw hex in components.
+- Variants via CVA; merge classes with `src/lib/cn.ts`.
+- Public API: `size` (xs|sm|md|lg), `variant` where applicable, `borderVariant` per taxonomy.
+- Keep components presentational; no Inventory/Campaign business logic.
