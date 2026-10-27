@@ -4,3 +4,12 @@
 @import "../../theme.css";
 
 @source "../../src/**/*.{ts,tsx}";
+@source "./**/*.{ts,tsx}";
+
+@theme {
+  --color-playground-sidebar: #0f1419;
+  --color-playground-sidebar-hover: rgba(255, 255, 255, 0.06);
+  --color-playground-sidebar-active: rgba(255, 255, 255, 0.1);
+  --color-playground-accent-bar: var(--color-primary);
+  --radius-sidebar-item: 8px;
+}
