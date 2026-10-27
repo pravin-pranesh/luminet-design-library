@@ -9,7 +9,23 @@ import { DocPageLayout } from "../../doc/DocPageLayout";
 import { DocSection } from "../../doc/DocSection";
 import { PropsTable, type PropDefinition } from "../../doc/PropsTable";
 
-const COLOR_ORDER: CheckboxColor[] = ["blue", "green", "purple", "red", "teal", "orange"];
+const COLOR_ORDER: CheckboxColor[] = [
+  "primary",
+  "success",
+  "warning",
+  "destructive",
+  "accent",
+  "neutral",
+];
+
+const SEMANTIC_LABELS: Record<CheckboxColor, string> = {
+  primary: "Primary",
+  success: "Success",
+  warning: "Warning",
+  destructive: "Destructive",
+  accent: "Accent",
+  neutral: "Neutral",
+};
 
 const CHECKBOX_PROPS: PropDefinition[] = [
   {
@@ -25,9 +41,9 @@ const CHECKBOX_PROPS: PropDefinition[] = [
   },
   {
     name: "color",
-    type: '"blue" | "green" | "purple" | "red" | "teal" | "orange"',
-    default: "teal",
-    description: "Fill color when checked or indeterminate; unchecked keeps a neutral border.",
+    type: '"primary" | "success" | "warning" | "destructive" | "accent" | "neutral"',
+    default: "primary",
+    description: "Semantic fill when checked or indeterminate; unchecked keeps a neutral border.",
   },
   {
     name: "isChecked",
@@ -191,9 +207,9 @@ export function CheckboxDocPage() {
       {
         type: "select" as const,
         key: "color",
-        label: "Color",
-        defaultValue: "teal",
-        options: COLOR_ORDER.map((c) => ({ value: c, label: c })),
+        label: "Semantic color",
+        defaultValue: "primary",
+        options: COLOR_ORDER.map((c) => ({ value: c, label: SEMANTIC_LABELS[c] })),
       },
       { type: "boolean" as const, key: "defaultChecked", label: "defaultChecked", defaultValue: true },
       { type: "boolean" as const, key: "isIndeterminate", label: "isIndeterminate" },
@@ -219,7 +235,7 @@ export function CheckboxDocPage() {
     <DocPageLayout
       sectionLabel="Forms & inputs"
       componentLabel="Checkbox"
-      description="Checkbox control with size and color variants, helper and error messaging, indeterminate groups, and clamped labels."
+      description="Checkbox control with size and semantic color variants, helper and error messaging, indeterminate groups, and clamped labels."
     >
       <DocSection title="States">
         <div className="flex flex-wrap items-start justify-center gap-10">
@@ -256,20 +272,20 @@ export function CheckboxDocPage() {
       </DocSection>
 
       <DocSection
-        title="Colour schemes"
-        description="Unchecked keeps a neutral border; checked and indeterminate use the selected fill token."
+        title="Semantic variants"
+        description="Unchecked keeps a neutral border; checked and indeterminate use Luminet semantic tokens from theme.css."
       >
         <div className="space-y-6">
           {COLOR_ORDER.map((color) => (
             <div key={color} className="flex flex-wrap items-center gap-8">
-              <span className="w-16 text-sm font-medium capitalize text-foreground">{color}</span>
+              <span className="w-24 text-sm font-medium text-foreground">{SEMANTIC_LABELS[color]}</span>
               <Checkbox color={color} aria-label={`${color} unchecked`} />
               <Checkbox color={color} defaultChecked aria-label={`${color} checked`} />
               <Checkbox color={color} isIndeterminate aria-label={`${color} indeterminate`} />
               <span
                 className="hidden size-3 rounded-sm sm:inline-block"
                 style={{ backgroundColor: checkboxColors[color] }}
-                title={checkboxColors[color]}
+                title={color}
               />
             </div>
           ))}

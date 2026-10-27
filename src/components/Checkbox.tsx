@@ -12,12 +12,12 @@ import {
 import { cn } from "../lib/cn";
 
 export const checkboxColors = {
-  blue: "#2563eb",
-  green: "#16a34a",
-  purple: "#7c3aed",
-  red: "#dc2626",
-  teal: "#0d9488",
-  orange: "#ea580c",
+  primary: "var(--color-control-primary)",
+  success: "var(--color-control-success)",
+  warning: "var(--color-control-warning)",
+  destructive: "var(--color-control-destructive)",
+  accent: "var(--color-control-accent)",
+  neutral: "var(--color-control-neutral)",
 } as const;
 
 export type CheckboxColor = keyof typeof checkboxColors;
@@ -91,7 +91,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
     {
       className,
       size = "md",
-      color = "teal",
+      color = "primary",
       label,
       helperText,
       error = false,
