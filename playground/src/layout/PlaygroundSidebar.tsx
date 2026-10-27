@@ -154,7 +154,7 @@ export function PlaygroundSidebar({
                           <span className="size-1 shrink-0 rounded-full bg-current opacity-60" />
                           <span className="truncate">{leaf.label}</span>
                           {leaf.status === "live" ? (
-                            <span className="ml-auto text-[10px] uppercase tracking-wide text-teal-400/90">
+                            <span className="ml-auto text-[10px] uppercase tracking-wide text-primary/90">
                               live
                             </span>
                           ) : null}

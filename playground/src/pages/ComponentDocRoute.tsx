@@ -5,12 +5,15 @@ import { ButtonDocPage } from "./button/ButtonDocPage";
 import { CheckboxDocPage } from "./checkbox/CheckboxDocPage";
 import { ComingSoonPage } from "./ComingSoonPage";
 import { OverviewPage } from "./OverviewPage";
+import { RadioButtonDocPage } from "./radio-button/RadioButtonDocPage";
 import { TextInputDocPage } from "./text-input/TextInputDocPage";
 
 const LIVE_PAGES: Record<string, () => ReactElement> = {
   "getting-started/overview": () => <OverviewPage />,
   "forms-inputs/checkbox": () => <CheckboxDocPage />,
   "forms-inputs/text-input": () => <TextInputDocPage />,
+  "forms-inputs/radio-button": () => <RadioButtonDocPage />,
+  "forms-inputs/radio-button-group": () => <RadioButtonDocPage />,
   "actions-utilities/button": () => <ButtonDocPage />,
 };
 
