@@ -1,4 +1,3 @@
-import { Button } from "@luminet/design-library";
 import { Outlet, Link } from "react-router-dom";
 import { PlaygroundSidebar, useSidebarState } from "./PlaygroundSidebar";
 
@@ -14,24 +13,26 @@ export function PlaygroundShell() {
         onToggleHidden={sidebar.toggleHidden}
       />
       <div className="flex min-w-0 flex-1 flex-col">
-        <header className="sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-border bg-card/95 px-6 py-3 backdrop-blur">
-          <div className="flex items-center gap-4 text-sm">
-            <Link to="/" className="font-medium text-foreground hover:text-primary">
-              Overview
-            </Link>
-            <span className="text-muted">Design tokens</span>
-            <a
-              href="https://github.com/pravin-pranesh/luminet-design-library"
-              className="text-muted hover:text-foreground"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Repository
-            </a>
+        <header className="sticky top-0 z-10 border-b border-border bg-card/95 px-6 py-2.5 backdrop-blur">
+          <div className="flex flex-wrap items-center justify-between gap-3 text-sm">
+            <div className="flex items-center gap-4">
+              <Link to="/" className="font-semibold text-foreground hover:text-primary">
+                Luminet Design Library
+              </Link>
+              <span className="hidden text-muted sm:inline">Playground</span>
+            </div>
+            <div className="flex items-center gap-4 text-muted">
+              <span className="hidden md:inline">Design tokens</span>
+              <a
+                href="https://github.com/pravin-pranesh/luminet-design-library"
+                className="hover:text-foreground"
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub
+              </a>
+            </div>
           </div>
-          <Button size="sm" variant="outline">
-            npm @luminet/design-library
-          </Button>
         </header>
         <main className="flex-1 px-6 py-8">
           <Outlet />
