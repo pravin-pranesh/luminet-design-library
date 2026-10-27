@@ -12,6 +12,8 @@ Peer dependencies: `react` and `react-dom` 18+.
 
 ## Theme & Tailwind v4
 
+Brand primary token: `#9E4244` (`--color-primary` in `theme.css`).
+
 Import the shared theme in your app CSS:
 
 ```css
