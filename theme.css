@@ -17,7 +17,8 @@
   --color-warning: #b45309;
   --color-accent: #6366f1;
   --color-neutral: #94a3b8;
-  --color-sidebar: #0f172a;
+  --color-sidebar: #1c1414;
+  --color-sidebar-warm: #2a1f1f;
 
   /* Semantic fills for Checkbox, Radio, and similar controls (placeholder until user theme) */
   --color-control-primary: var(--color-primary);

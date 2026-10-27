@@ -7,9 +7,10 @@
 @source "./**/*.{ts,tsx}";
 
 @theme {
-  --color-playground-sidebar: #0f1419;
-  --color-playground-sidebar-hover: rgba(255, 255, 255, 0.06);
-  --color-playground-sidebar-active: rgba(255, 255, 255, 0.1);
+  /* Warm Luminet sidebar — not Pixelize slate chrome */
+  --color-playground-sidebar: var(--color-sidebar-warm);
+  --color-playground-sidebar-hover: rgba(158, 66, 68, 0.12);
+  --color-playground-sidebar-active: rgba(158, 66, 68, 0.22);
   --color-playground-accent-bar: var(--color-primary);
   --radius-sidebar-item: 8px;
 }

@@ -2,6 +2,7 @@ import type { ReactElement } from "react";
 import { Navigate, useParams } from "react-router-dom";
 import { findNavLeaf } from "../nav/component-registry";
 import { ButtonDocPage } from "./button/ButtonDocPage";
+import { CatalogDocPage } from "./CatalogDocPage";
 import { CheckboxDocPage } from "./checkbox/CheckboxDocPage";
 import { ComingSoonPage } from "./ComingSoonPage";
 import {
@@ -60,7 +61,7 @@ import {
   TabsDocPage,
 } from "./phase2/phase2DocPages";
 
-const LIVE_PAGES: Record<string, () => ReactElement> = {
+const CUSTOM_DOC_PAGES: Record<string, () => ReactElement> = {
   "getting-started/overview": () => <OverviewPage />,
   "forms-inputs/checkbox": () => <CheckboxDocPage />,
   "forms-inputs/text-input": () => <TextInputDocPage />,
@@ -125,14 +126,14 @@ export function ComponentDocRoute() {
   }
 
   const key = `${section}/${component}`;
-  const LivePage = LIVE_PAGES[key];
-  if (LivePage) {
-    return <LivePage />;
+  const CustomPage = CUSTOM_DOC_PAGES[key];
+  if (CustomPage) {
+    return <CustomPage />;
   }
 
   const leaf = findNavLeaf(section, component);
   if (leaf?.status === "live") {
-    return <ComingSoonPage sectionId={section} componentId={component} />;
+    return <CatalogDocPage sectionId={section} componentId={component} />;
   }
 
   return <ComingSoonPage sectionId={section} componentId={component} />;

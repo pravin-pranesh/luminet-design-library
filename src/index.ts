@@ -117,4 +117,36 @@ export {
   type TabProps,
   type TabPanelProps,
 } from "./components/Tabs";
+export { Modal, type ModalProps } from "./components/Modal";
+export { AlertDialog, type AlertDialogProps } from "./components/AlertDialog";
+export { Tooltip, type TooltipProps } from "./components/Tooltip";
+export { List, ListItem, listVariants, listItemVariants, type ListProps, type ListItemProps } from "./components/List";
+export {
+  Table,
+  TableHead,
+  TableBody,
+  TableRow,
+  TableHeaderCell,
+  TableCell,
+  type TableProps,
+} from "./components/Table";
+export { DescriptionList, type DescriptionListProps, type DescriptionListItem } from "./components/DescriptionList";
+export { FormWrapper, type FormWrapperProps } from "./components/FormWrapper";
+export { ContactForm, type ContactFormProps } from "./components/ContactForm";
+export { FeedbackForm, type FeedbackFormProps } from "./components/FeedbackForm";
+export { FileUpload, FileUploader, type FileUploadProps } from "./components/FileUpload";
+export { FilePreview, type FilePreviewProps } from "./components/FilePreview";
+export { Collapse, type CollapseProps } from "./components/Collapse";
+export { AppSwitcher, type AppSwitcherProps, type AppSwitcherApp } from "./components/AppSwitcher";
+export { FilterBar, type FilterBarProps, type FilterChip } from "./components/FilterBar";
+export { Pagination, type PaginationProps } from "./components/Pagination";
+export { Avatar, avatarVariants, type AvatarProps } from "./components/Avatar";
+export { Image, type ImageProps } from "./components/Image";
+export { Icon, iconVariants, type IconProps } from "./components/Icon";
+export { Kbd, kbdVariants, type KbdProps } from "./components/Kbd";
+export { CopyButton, type CopyButtonProps } from "./components/CopyButton";
+export { LazyWrapper, type LazyWrapperProps } from "./components/LazyWrapper";
+export { ProductCard, type ProductCardProps } from "./components/ProductCard";
+export { CartItem, type CartItemProps } from "./components/CartItem";
+export { BagBar, type BagBarProps } from "./components/BagBar";
 export { cn } from "./lib/cn";

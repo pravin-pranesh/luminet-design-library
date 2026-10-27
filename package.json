@@ -25,6 +25,7 @@
   ],
   "scripts": {
     "build": "tsup",
+    "generate:catalog": "node scripts/generate-catalog.mjs",
     "dev": "npm run dev --prefix playground",
     "typecheck": "tsc --noEmit"
   },

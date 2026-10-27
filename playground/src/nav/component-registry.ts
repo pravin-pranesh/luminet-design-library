@@ -18,7 +18,7 @@ function leaf(
   sectionId: string,
   id: string,
   label: string,
-  status: ComponentStatus = "planned",
+  status: ComponentStatus = "live",
 ): NavLeaf {
   return { id, label, path: `/c/${sectionId}/${id}`, status };
 }

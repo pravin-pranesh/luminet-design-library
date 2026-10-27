@@ -16,7 +16,7 @@ export const Backdrop = forwardRef<HTMLDivElement, BackdropProps>(
       <div
         ref={ref}
         aria-hidden
-        className={cn("fixed inset-0 bg-foreground/40 backdrop-blur-[1px] transition-opacity", className)}
+        className={cn("fixed inset-0 bg-foreground/40 backdrop-blur-[1px] transition-opacity duration-150", className)}
         style={{ zIndex }}
         {...props}
       />
