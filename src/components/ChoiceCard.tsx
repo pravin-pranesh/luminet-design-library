@@ -24,7 +24,7 @@ const choiceCardVariants = cva(
   },
 );
 
-export type ChoiceCardProps = HTMLAttributes<HTMLButtonElement> &
+export type ChoiceCardProps = Omit<HTMLAttributes<HTMLButtonElement>, "title"> &
   VariantProps<typeof choiceCardVariants> & {
     title: ReactNode;
     description?: ReactNode;
