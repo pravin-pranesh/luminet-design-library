@@ -108,6 +108,16 @@ import {
   VendorCardDocPage,
   WishlistItemDocPage,
 } from "./commerce/commerceDocPages";
+import {
+  AppSwitcherDocPage,
+  ContextMenuDocPage,
+  LauncherSearchEngineDocPage,
+  LauncherTriggerDocPage,
+  MobileNavDocPage,
+  PaginationDocPage,
+  SidebarNavDocPage,
+  StepperDocPage,
+} from "./navigation/navigationDocPages";
 
 const CUSTOM_DOC_PAGES: Record<string, () => ReactElement> = {
   "getting-started/overview": () => <OverviewPage />,
@@ -208,6 +218,14 @@ const CUSTOM_DOC_PAGES: Record<string, () => ReactElement> = {
   "navigation/header-actions": () => <HeaderActionsDocPage />,
   "navigation/link": () => <LinkDocPage />,
   "navigation/tabs": () => <TabsDocPage />,
+  "navigation/app-switcher": () => <AppSwitcherDocPage />,
+  "navigation/pagination": () => <PaginationDocPage />,
+  "navigation/launcher-trigger": () => <LauncherTriggerDocPage />,
+  "navigation/launcher-search": () => <LauncherSearchEngineDocPage />,
+  "navigation/stepper": () => <StepperDocPage />,
+  "navigation/sidebar-nav": () => <SidebarNavDocPage />,
+  "navigation/mobile-nav": () => <MobileNavDocPage />,
+  "navigation/context-menu": () => <ContextMenuDocPage />,
 };
 
 export function ComponentDocRoute() {

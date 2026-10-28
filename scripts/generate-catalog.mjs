@@ -21,6 +21,7 @@ const EXISTING = new Set([
   "ShippingSelector", "PaymentMethod", "WishlistItem", "CatalogGrid", "CatalogFilters", "MiniCart",
   "OrderHistory", "SubscriptionPlan", "InventoryBadge", "CompareBar", "ReviewStars", "DeliveryEstimate",
   "GiftWrap", "LoyaltyPoints", "ReturnLabel", "TaxBreakdown", "VendorCard",
+  "LauncherTrigger", "LauncherSearchEngine", "Stepper", "SidebarNav", "MobileNav", "ContextMenu",
   "FormControl", "FormField", "FormLabel", "FormHelperText", "FormErrorMessage", "FieldMessage",
   "Alert", "AlertTitle", "AlertDescription", "AlertIcon", "ConfirmDialog",
   "Box", "Flex", "Grid", "Container", "Card", "Divider", "Heading", "EmptyState", "ErrorState", "Badge",

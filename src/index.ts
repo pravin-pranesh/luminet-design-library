@@ -201,6 +201,20 @@ export { LoyaltyPoints, loyaltyVariants, type LoyaltyPointsProps } from "./compo
 export { ReturnLabel, type ReturnLabelProps } from "./components/ReturnLabel";
 export { TaxBreakdown, type TaxBreakdownProps, type TaxLine } from "./components/TaxBreakdown";
 export { VendorCard, type VendorCardProps } from "./components/VendorCard";
+export {
+  LauncherTrigger,
+  launcherTriggerVariants,
+  type LauncherTriggerProps,
+} from "./components/LauncherTrigger";
+export {
+  LauncherSearchEngine,
+  type LauncherSearchEngineProps,
+  type LauncherResult,
+} from "./components/LauncherSearchEngine";
+export { Stepper, stepCircle, type StepperProps, type StepperStep } from "./components/Stepper";
+export { SidebarNav, type SidebarNavProps, type SidebarNavItem } from "./components/SidebarNav";
+export { MobileNav, type MobileNavProps, type MobileNavItem } from "./components/MobileNav";
+export { ContextMenu, type ContextMenuProps, type ContextMenuItem } from "./components/ContextMenu";
 export { GettingStartedOverview } from "./catalog/generated";
 export { ThemingGuide } from "./catalog/generated";
 export { AppearanceSettings } from "./catalog/generated";
@@ -217,12 +231,6 @@ export { Commercecheckout } from "./catalog/generated";
 export { Editor } from "./catalog/generated";
 export { CouponField } from "./catalog/generated";
 export { FieldSelectModal } from "./catalog/generated";
-export { LauncherTrigger } from "./catalog/generated";
-export { LauncherSearchEngine } from "./catalog/generated";
-export { Stepper } from "./catalog/generated";
-export { SidebarNav } from "./catalog/generated";
-export { MobileNav } from "./catalog/generated";
-export { ContextMenu } from "./catalog/generated";
 export { Toaster } from "./catalog/generated";
 export { LimitReachedModal } from "./catalog/generated";
 export { Popover } from "./catalog/generated";
