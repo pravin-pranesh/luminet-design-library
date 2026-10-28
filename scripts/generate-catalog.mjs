@@ -248,11 +248,19 @@ export const ${exportName} = forwardRef<HTMLDivElement, LuminetCommonProps>(func
 });`;
 }
 
-const imports = `import {
-  forwardRef,
-  createElement,
-  type AnchorHTMLAttributes,
-  type ButtonHTMLAttributes,
+const body = [...toGenerate.entries()]
+  .map(([name, entry]) => emitComponent(name, entry.sectionId))
+  .join("\n");
+
+const kindsUsed = new Set(
+  [...toGenerate.entries()].map(([name, entry]) => templateFor(name, entry.sectionId)),
+);
+const reactImports = ["forwardRef"];
+if (kindsUsed.has("heading")) reactImports.push("createElement");
+if (kindsUsed.has("link")) reactImports.push("type AnchorHTMLAttributes");
+if (kindsUsed.has("button")) reactImports.push("type ButtonHTMLAttributes");
+const importsBlock = `import {
+  ${reactImports.join(",\n  ")},
 } from "react";
 import { cn } from "../lib/cn";
 import { luminetMutedText, luminetSurfaceClass, type LuminetCommonProps } from "../lib/luminet-common";
@@ -266,13 +274,9 @@ function PlaceholderBlock({ label }: { label: string }) {
 }
 `;
 
-const body = [...toGenerate.entries()]
-  .map(([name, entry]) => emitComponent(name, entry.sectionId))
-  .join("\n");
-
 const outPath = path.join(ROOT, "src/catalog/generated.tsx");
 fs.mkdirSync(path.dirname(outPath), { recursive: true });
-fs.writeFileSync(outPath, `${imports}\n${body}\n`);
+fs.writeFileSync(outPath, `${importsBlock}\n${body}\n`);
 
 const exportNames = [...new Set(meta.map((e) => e.exportName))];
 const indexExtra = exportNames.filter((n) => !EXISTING.has(n));
@@ -280,12 +284,15 @@ const exportLine = indexExtra.map((n) => `export { ${n} } from "./catalog/genera
 
 const indexPath = path.join(ROOT, "src/index.ts");
 const indexText = fs.readFileSync(indexPath, "utf8");
-const baseEnd = indexText.indexOf('export { cn } from "./lib/cn";');
-const base =
-  baseEnd >= 0
-    ? indexText.slice(0, baseEnd).replace(/\nexport \{[^}]+\} from "\.\/catalog\/generated";\n/g, "")
-    : indexText;
-const merged = `${base.trim()}\n${exportLine}\nexport { cn } from "./lib/cn";\n`;
+const cnExport = 'export { cn } from "./lib/cn";';
+const baseEnd = indexText.indexOf(cnExport);
+const withoutCn = baseEnd >= 0 ? indexText.slice(0, baseEnd) : indexText;
+const base = withoutCn
+  .split("\n")
+  .filter((line) => !line.includes('from "./catalog/generated"'))
+  .join("\n")
+  .trimEnd();
+const merged = `${base}\n${exportLine}\n${cnExport}\n`;
 fs.writeFileSync(indexPath, merged);
 
 const metaPath = path.join(ROOT, "playground/src/doc/catalog-meta.json");
