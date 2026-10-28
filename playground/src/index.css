@@ -7,6 +7,9 @@
 @source "./**/*.{ts,tsx}";
 
 @theme {
+  --sidebar-width: 17.5rem; /* 280px — playground nav column */
+  --sidebar-width-collapsed: 4.25rem;
+
   /* Warm Luminet sidebar — not Pixelize slate chrome */
   --color-playground-sidebar: var(--color-sidebar-warm);
   --color-playground-sidebar-hover: rgba(158, 66, 68, 0.12);

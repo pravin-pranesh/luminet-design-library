@@ -85,7 +85,9 @@ export function PlaygroundSidebar({
   return (
     <aside
       className={`flex shrink-0 flex-col border-r border-white/10 bg-[var(--color-playground-sidebar)] text-slate-200 transition-[width] duration-200 ${
-        collapsed ? "w-[4.25rem]" : "w-72"
+        collapsed
+          ? "w-[var(--sidebar-width-collapsed)] min-w-[var(--sidebar-width-collapsed)] max-w-[var(--sidebar-width-collapsed)]"
+          : "w-[var(--sidebar-width)] min-w-[var(--sidebar-width)] max-w-[var(--sidebar-width)]"
       }`}
     >
       <div className="flex items-start justify-between gap-2 border-b border-white/10 px-4 py-4">
@@ -145,14 +147,14 @@ export function PlaygroundSidebar({
                       <li key={leaf.id}>
                         <Link
                           to={leaf.path}
-                          className={`flex items-center gap-2 rounded-[var(--radius-sidebar-item)] px-2 py-1.5 text-sm ${
+                          className={`flex min-w-0 items-center gap-2 overflow-hidden rounded-[var(--radius-sidebar-item)] px-2 py-1.5 text-sm ${
                             selected
                               ? "bg-white/15 font-medium text-white"
                               : "text-slate-400 hover:bg-white/5 hover:text-slate-200"
                           }`}
                         >
                           <span className="size-1 shrink-0 rounded-full bg-current opacity-60" />
-                          <span className="truncate">{leaf.label}</span>
+                          <span className="min-w-0 flex-1 truncate">{leaf.label}</span>
                           {leaf.status === "live" ? (
                             <span className="ml-auto text-[10px] uppercase tracking-wide text-primary/90">
                               live
