@@ -139,6 +139,31 @@ export { FilePreview, type FilePreviewProps } from "./components/FilePreview";
 export { Collapse, type CollapseProps } from "./components/Collapse";
 export { AppSwitcher, type AppSwitcherProps, type AppSwitcherApp } from "./components/AppSwitcher";
 export { FilterBar, type FilterBarProps, type FilterChip } from "./components/FilterBar";
+export { FilterSidebar, type FilterSidebarProps, type FilterSidebarSection } from "./components/FilterSidebar";
+export { FilteredEmptyState, type FilteredEmptyStateProps } from "./components/FilteredEmptyState";
+export { DetailSections, type DetailSectionsProps, type DetailSection } from "./components/DetailSections";
+export {
+  AddressCard,
+  addressCardVariants,
+  type AddressCardProps,
+} from "./components/AddressCard";
+export { AddressCardGroup, type AddressCardGroupProps } from "./components/AddressCardGroup";
+export {
+  ChoiceCard,
+  choiceCardVariants,
+  type ChoiceCardProps,
+} from "./components/ChoiceCard";
+export { ChoiceCardGroup, type ChoiceCardGroupProps } from "./components/ChoiceCardGroup";
+export { ListIcon, listIconVariants, type ListIconProps } from "./components/ListIcon";
+export { KanbanBoard, type KanbanBoardProps, type KanbanColumn, type KanbanCard } from "./components/KanbanBoard";
+export { CalendarGrid, type CalendarGridProps } from "./components/CalendarGrid";
+export {
+  CustomModulesTable,
+  type CustomModulesTableProps,
+  type CustomModuleRow,
+} from "./components/CustomModulesTable";
+export { Center, type CenterProps } from "./components/layout/Center";
+export { GridItem, type GridItemProps } from "./components/layout/GridItem";
 export { Pagination, type PaginationProps } from "./components/Pagination";
 export { Avatar, avatarVariants, type AvatarProps } from "./components/Avatar";
 export { Image, type ImageProps } from "./components/Image";
@@ -165,19 +190,6 @@ export { Commercecheckout } from "./catalog/generated";
 export { Editor } from "./catalog/generated";
 export { CouponField } from "./catalog/generated";
 export { FieldSelectModal } from "./catalog/generated";
-export { KanbanBoard } from "./catalog/generated";
-export { FilteredEmptyState } from "./catalog/generated";
-export { DetailSections } from "./catalog/generated";
-export { AddressCard } from "./catalog/generated";
-export { AddressCardGroup } from "./catalog/generated";
-export { ChoiceCard } from "./catalog/generated";
-export { ChoiceCardGroup } from "./catalog/generated";
-export { ListIcon } from "./catalog/generated";
-export { CalendarGrid } from "./catalog/generated";
-export { CustomModulesTable } from "./catalog/generated";
-export { FilterSidebar } from "./catalog/generated";
-export { Center } from "./catalog/generated";
-export { GridItem } from "./catalog/generated";
 export { BulkSelectionBar } from "./catalog/generated";
 export { CheckoutSummary } from "./catalog/generated";
 export { OrderLine } from "./catalog/generated";

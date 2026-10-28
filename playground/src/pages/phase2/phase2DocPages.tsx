@@ -454,6 +454,29 @@ export function HeadingDocPage() {
           </Heading>
         ))}
       </DocSection>
+      <ComponentPlayground
+        controls={[
+          {
+            type: "select",
+            key: "level",
+            label: "level",
+            defaultValue: "2",
+            options: [1, 2, 3, 4, 5, 6].map((n) => ({ value: String(n), label: String(n) })),
+          },
+        ]}
+        renderPreview={(v) => (
+          <Heading level={Number(v.level) as 1 | 2 | 3 | 4 | 5 | 6}>Section title</Heading>
+        )}
+        buildSnippet={(v) => `<Heading level={${v.level}}>Section title</Heading>`}
+      />
+      <DocSection title="Props">
+        <PropsTable
+          rows={[
+            { name: "level", type: "1 | 2 | 3 | 4 | 5 | 6", default: "2", description: "Visual scale." },
+            { name: "as", type: "h1–h6", description: "Override semantic element." },
+          ]}
+        />
+      </DocSection>
     </DocPageLayout>
   );
 }
@@ -461,8 +484,37 @@ export function HeadingDocPage() {
 export function EmptyStateDocPage() {
   return (
     <DocPageLayout sectionLabel="Data display" componentLabel="EmptyState" description="Placeholder when a list or view has no data.">
-      <DocSection title="Example">
+      <DocSection title="With action">
         <EmptyState title="No projects yet" description="Create a project to get started." actionLabel="New project" onAction={() => undefined} />
+      </DocSection>
+      <DocSection title="Minimal">
+        <EmptyState title="Nothing here" description="Check back later or adjust filters." />
+      </DocSection>
+      <ComponentPlayground
+        controls={[
+          { type: "text", key: "title", label: "title", defaultValue: "No records" },
+          { type: "boolean", key: "action", label: "show action" },
+        ]}
+        renderPreview={(v) => (
+          <EmptyState
+            title={String(v.title)}
+            description="Helper copy for empty views."
+            actionLabel={v.action ? "Create" : undefined}
+            onAction={v.action ? () => undefined : undefined}
+          />
+        )}
+        buildSnippet={(v) => `<EmptyState title="${v.title}" description="…"${v.action ? ' actionLabel="Create"' : ""} />`}
+      />
+      <DocSection title="Props">
+        <PropsTable
+          rows={[
+            { name: "title", type: "ReactNode", description: "Primary headline." },
+            { name: "description", type: "ReactNode", description: "Supporting copy." },
+            { name: "actionLabel", type: "string", description: "CTA label when onAction set." },
+            { name: "onAction", type: "() => void", description: "Primary button handler." },
+            { name: "icon", type: "ReactNode", description: "Optional illustration slot." },
+          ]}
+        />
       </DocSection>
     </DocPageLayout>
   );
@@ -471,8 +523,32 @@ export function EmptyStateDocPage() {
 export function ErrorStateDocPage() {
   return (
     <DocPageLayout sectionLabel="Data display" componentLabel="ErrorState" description="Full-width error panel with optional retry.">
-      <DocSection title="Example">
+      <DocSection title="With retry">
         <ErrorState onRetry={() => undefined} />
+      </DocSection>
+      <DocSection title="Custom copy">
+        <ErrorState title="Sync failed" description="We could not reach the server." onRetry={() => undefined} retryLabel="Try again" />
+      </DocSection>
+      <ComponentPlayground
+        controls={[{ type: "boolean", key: "retry", label: "show retry", defaultValue: true }]}
+        renderPreview={(v) => (
+          <ErrorState
+            onRetry={v.retry ? () => undefined : undefined}
+            title="Something went wrong"
+            description="Refresh or retry in a moment."
+          />
+        )}
+        buildSnippet={(v) => `<ErrorState${v.retry ? " onRetry={…}" : ""} />`}
+      />
+      <DocSection title="Props">
+        <PropsTable
+          rows={[
+            { name: "title", type: "ReactNode", description: "Error headline." },
+            { name: "description", type: "ReactNode", description: "Explanation and next steps." },
+            { name: "onRetry", type: "() => void", description: "Shows retry button when set." },
+            { name: "retryLabel", type: "string", description: "Retry button label." },
+          ]}
+        />
       </DocSection>
     </DocPageLayout>
   );
@@ -504,6 +580,14 @@ export function BadgeDocPage() {
         renderPreview={(v) => <Badge variant={v.variant as "subtle"}>Badge</Badge>}
         buildSnippet={(v) => `<Badge variant="${v.variant}">Badge</Badge>`}
       />
+      <DocSection title="Props">
+        <PropsTable
+          rows={[
+            { name: "variant", type: "solid | outline | subtle | success | warning | destructive", default: "subtle", description: "Semantic chip style." },
+            sizeProp,
+          ]}
+        />
+      </DocSection>
     </DocPageLayout>
   );
 }
@@ -603,7 +687,7 @@ export function HeaderActionsDocPage() {
 export function AccordionDocPage() {
   return (
     <DocPageLayout sectionLabel="Data display" componentLabel="Accordion" description="Expand/collapse sections — single or multiple open.">
-      <DocSection title="Single">
+      <DocSection title="Single open">
         <Accordion defaultValue={["a"]} className="max-w-lg">
           <AccordionItem id="a" title="What is Luminet?">
             Luminet is a design system for product teams.
@@ -612,6 +696,40 @@ export function AccordionDocPage() {
             Import theme.css and override CSS variables.
           </AccordionItem>
         </Accordion>
+      </DocSection>
+      <DocSection title="Multiple open">
+        <Accordion type="multiple" defaultValue={["x", "y"]} className="max-w-lg">
+          <AccordionItem id="x" title="Shipping">
+            Free over $50.
+          </AccordionItem>
+          <AccordionItem id="y" title="Returns">
+            30-day return window.
+          </AccordionItem>
+        </Accordion>
+      </DocSection>
+      <ComponentPlayground
+        controls={[{ type: "boolean", key: "multiple", label: "type multiple" }]}
+        renderPreview={(v) => (
+          <Accordion type={v.multiple ? "multiple" : "single"} defaultValue={["1"]} className="max-w-md">
+            <AccordionItem id="1" title="Panel one">
+              Content one.
+            </AccordionItem>
+            <AccordionItem id="2" title="Panel two">
+              Content two.
+            </AccordionItem>
+          </Accordion>
+        )}
+        buildSnippet={(v) => `<Accordion type="${v.multiple ? "multiple" : "single"}" defaultValue={["1"]}>…</Accordion>`}
+      />
+      <DocSection title="Props">
+        <PropsTable
+          rows={[
+            { name: "type", type: '"single" | "multiple"', default: "single", description: "Allow more than one open panel." },
+            { name: "defaultValue", type: "string[]", description: "Initially expanded item ids." },
+            { name: "value", type: "string[]", description: "Controlled open ids." },
+            { name: "onChange", type: "(ids: string[]) => void", description: "Open set change handler." },
+          ]}
+        />
       </DocSection>
     </DocPageLayout>
   );
@@ -707,6 +825,36 @@ export function LoadingDocPage() {
     <DocPageLayout sectionLabel="Data display" componentLabel="Loading" description="Spinner with label; optional full-screen overlay.">
       <DocSection title="Inline">
         <Loading />
+      </DocSection>
+      <DocSection title="Sizes">
+        <Flex gap="6" align="center">
+          {(["sm", "md", "lg"] as const).map((s) => (
+            <Loading key={s} size={s} label={`Size ${s}`} />
+          ))}
+        </Flex>
+      </DocSection>
+      <ComponentPlayground
+        controls={[
+          { type: "text", key: "label", label: "label", defaultValue: "Loading…" },
+          {
+            type: "select",
+            key: "size",
+            label: "size",
+            defaultValue: "md",
+            options: ["sm", "md", "lg"].map((v) => ({ value: v, label: v })),
+          },
+        ]}
+        renderPreview={(v) => <Loading size={v.size as "md"} label={String(v.label)} />}
+        buildSnippet={(v) => `<Loading size="${v.size}" label="${v.label}" />`}
+      />
+      <DocSection title="Props">
+        <PropsTable
+          rows={[
+            { name: "label", type: "string", default: "Loading…", description: "Accessible status text." },
+            { name: "size", type: '"sm" | "md" | "lg"', default: "md", description: "Spinner scale." },
+            { name: "overlay", type: "boolean", default: "false", description: "Full-screen blocking overlay." },
+          ]}
+        />
       </DocSection>
     </DocPageLayout>
   );

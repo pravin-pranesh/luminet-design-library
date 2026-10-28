@@ -21,8 +21,11 @@ const EXISTING = new Set([
   "Alert", "AlertTitle", "AlertDescription", "AlertIcon", "ConfirmDialog",
   "Box", "Flex", "Grid", "Container", "Card", "Divider", "Heading", "EmptyState", "ErrorState", "Badge",
   "Link", "IconButton", "Breadcrumbs", "Header", "HeaderActions", "Drawer", "DrawerHeader", "DrawerBody",
-  "DrawerFooter", "Accordion", "AccordionItem", "Loading", "CircularProgress", "Tabs", "TabList", "Tab",
+  "DrawerFooter",   "Accordion", "AccordionItem", "Loading", "CircularProgress", "Tabs", "TabList", "Tab",
   "TabPanel", "InputField", "cn",
+  "KanbanBoard", "FilteredEmptyState", "DetailSections", "AddressCard", "AddressCardGroup",
+  "ChoiceCard", "ChoiceCardGroup", "ListIcon", "CalendarGrid", "CustomModulesTable",
+  "FilterSidebar", "Center", "GridItem",
 ]);
 
 const ID_EXPORT = {
