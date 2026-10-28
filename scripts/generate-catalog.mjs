@@ -31,6 +31,13 @@ const EXISTING = new Set([
   "KanbanBoard", "FilteredEmptyState", "DetailSections", "AddressCard", "AddressCardGroup",
   "ChoiceCard", "ChoiceCardGroup", "ListIcon", "CalendarGrid", "CustomModulesTable",
   "FilterSidebar", "Center", "GridItem",
+  "Toaster", "LimitReachedModal", "Popover", "FormDrawer", "Hide",
+  "FilePreviewTrigger", "AudioRecorder", "VideoPlayer", "MediaGallery",
+  "ApexAreaChart", "ApexBarChart", "UpgradeButton", "PlanPill", "UsageMeter", "InvoiceRow",
+  "KbdShortcut", "PinToggle", "SortControl", "ThemeToggle",
+  "GettingStartedOverview", "ThemingGuide", "AppearanceSettings",
+  "Dashboard", "Recordslist", "Recorddetail", "Settings", "Profile", "Billing", "Inbox",
+  "Splitview", "Kanbanpage", "Commercecheckout",
 ]);
 
 const ID_EXPORT = {

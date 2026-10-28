@@ -215,39 +215,52 @@ export { Stepper, stepCircle, type StepperProps, type StepperStep } from "./comp
 export { SidebarNav, type SidebarNavProps, type SidebarNavItem } from "./components/SidebarNav";
 export { MobileNav, type MobileNavProps, type MobileNavItem } from "./components/MobileNav";
 export { ContextMenu, type ContextMenuProps, type ContextMenuItem } from "./components/ContextMenu";
-export { GettingStartedOverview } from "./catalog/generated";
-export { ThemingGuide } from "./catalog/generated";
-export { AppearanceSettings } from "./catalog/generated";
-export { Dashboard } from "./catalog/generated";
-export { Recordslist } from "./catalog/generated";
-export { Recorddetail } from "./catalog/generated";
-export { Settings } from "./catalog/generated";
-export { Profile } from "./catalog/generated";
-export { Billing } from "./catalog/generated";
-export { Inbox } from "./catalog/generated";
-export { Splitview } from "./catalog/generated";
-export { Kanbanpage } from "./catalog/generated";
-export { Commercecheckout } from "./catalog/generated";
+export {
+  GettingStartedOverview,
+  type GettingStartedOverviewProps,
+} from "./components/getting-started/GettingStartedOverview";
+export { ThemingGuide, type ThemingGuideProps } from "./components/getting-started/ThemingGuide";
+export {
+  AppearanceSettings,
+  type AppearanceSettingsProps,
+} from "./components/getting-started/AppearanceSettings";
+export {
+  Dashboard,
+  Recordslist,
+  Recorddetail,
+  Settings,
+  Profile,
+  Billing,
+  Inbox,
+  Splitview,
+  Kanbanpage,
+  Commercecheckout,
+  type PageLayoutProps,
+} from "./components/page-examples/pageLayouts";
+export { Toaster, toastVariants, type ToasterProps, type ToastItem } from "./components/Toaster";
+export { LimitReachedModal, type LimitReachedModalProps } from "./components/LimitReachedModal";
+export { Popover, type PopoverProps } from "./components/Popover";
+export { FormDrawer, type FormDrawerProps } from "./components/FormDrawer";
+export { Hide, type HideProps } from "./components/Hide";
+export { FilePreviewTrigger, type FilePreviewTriggerProps } from "./components/FilePreviewTrigger";
+export { AudioRecorder, recorderVariants, type AudioRecorderProps } from "./components/AudioRecorder";
+export { VideoPlayer, type VideoPlayerProps } from "./components/VideoPlayer";
+export { MediaGallery, type MediaGalleryProps, type MediaGalleryItem } from "./components/MediaGallery";
+export { ApexAreaChart, type ApexAreaChartProps } from "./components/ApexAreaChart";
+export { ApexBarChart, type ApexBarChartProps } from "./components/ApexBarChart";
+export {
+  UpgradeButton,
+  upgradeButtonVariants,
+  type UpgradeButtonProps,
+} from "./components/UpgradeButton";
+export { PlanPill, planPillVariants, type PlanPillProps } from "./components/PlanPill";
+export { UsageMeter, type UsageMeterProps } from "./components/UsageMeter";
+export { InvoiceRow, type InvoiceRowProps } from "./components/InvoiceRow";
+export { KbdShortcut, type KbdShortcutProps } from "./components/KbdShortcut";
+export { PinToggle, type PinToggleProps } from "./components/PinToggle";
+export { SortControl, type SortControlProps, type SortDirection } from "./components/SortControl";
+export { ThemeToggle, type ThemeToggleProps } from "./components/ThemeToggle";
 export { Editor } from "./catalog/generated";
 export { CouponField } from "./catalog/generated";
 export { FieldSelectModal } from "./catalog/generated";
-export { Toaster } from "./catalog/generated";
-export { LimitReachedModal } from "./catalog/generated";
-export { Popover } from "./catalog/generated";
-export { FormDrawer } from "./catalog/generated";
-export { Hide } from "./catalog/generated";
-export { FilePreviewTrigger } from "./catalog/generated";
-export { AudioRecorder } from "./catalog/generated";
-export { VideoPlayer } from "./catalog/generated";
-export { MediaGallery } from "./catalog/generated";
-export { ApexAreaChart } from "./catalog/generated";
-export { ApexBarChart } from "./catalog/generated";
-export { UpgradeButton } from "./catalog/generated";
-export { PlanPill } from "./catalog/generated";
-export { UsageMeter } from "./catalog/generated";
-export { InvoiceRow } from "./catalog/generated";
-export { KbdShortcut } from "./catalog/generated";
-export { PinToggle } from "./catalog/generated";
-export { SortControl } from "./catalog/generated";
-export { ThemeToggle } from "./catalog/generated";
 export { cn } from "./lib/cn";
