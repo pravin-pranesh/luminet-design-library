@@ -13,6 +13,7 @@ const EXISTING = new Set([
   "Button", "ButtonGroupIcon", "TextInput", "InputTextArea", "NoteTextArea", "NumberInput",
   "Search", "PinInput", "RangeSlider", "ToggleSwitch", "Checkbox", "RadioButton", "RadioButtonGroup",
   "Dropdown", "Select", "SearchSelect", "MultiSelect", "DatePicker", "Backdrop", "Modal",
+  "Editor", "CouponField", "FieldSelectModal",
   "AlertDialog", "Tooltip", "List", "ListItem", "Table", "TableHead", "TableBody", "TableRow",
   "TableHeaderCell", "TableCell", "DescriptionList", "FormWrapper", "ContactForm", "FeedbackForm",
   "FileUpload", "FileUploader", "FilePreview", "Collapse", "AppSwitcher", "FilterBar", "Pagination",

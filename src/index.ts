@@ -260,7 +260,12 @@ export { KbdShortcut, type KbdShortcutProps } from "./components/KbdShortcut";
 export { PinToggle, type PinToggleProps } from "./components/PinToggle";
 export { SortControl, type SortControlProps, type SortDirection } from "./components/SortControl";
 export { ThemeToggle, type ThemeToggleProps } from "./components/ThemeToggle";
-export { Editor } from "./catalog/generated";
-export { CouponField } from "./catalog/generated";
-export { FieldSelectModal } from "./catalog/generated";
+export { Editor, editorVariants, type EditorProps } from "./components/Editor";
+export { CouponField, type CouponFieldProps } from "./components/CouponField";
+export {
+  FieldSelectModal,
+  type FieldSelectModalProps,
+  type FieldOption,
+} from "./components/FieldSelectModal";
+
 export { cn } from "./lib/cn";

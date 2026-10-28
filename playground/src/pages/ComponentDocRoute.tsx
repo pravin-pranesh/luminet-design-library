@@ -19,6 +19,17 @@ import {
   SearchSelectDocPage,
   SelectDocPage,
 } from "./forms/phase1DocPages";
+import {
+  ContactFormDocPage,
+  CopyButtonFormsDocPage,
+  CouponFieldDocPage,
+  EditorDocPage,
+  FeedbackFormDocPage,
+  FieldSelectModalDocPage,
+  FileUploaderDocPage,
+  FormsFileUploadDocPage,
+  FormWrapperDocPage,
+} from "./forms/formsRemainingDocPages";
 import { OverviewPage } from "./OverviewPage";
 import { RadioButtonDocPage } from "./radio-button/RadioButtonDocPage";
 import { TextInputDocPage } from "./text-input/TextInputDocPage";
@@ -198,6 +209,15 @@ const CUSTOM_DOC_PAGES: Record<string, () => ReactElement> = {
   "forms-inputs/form-helper-text": () => <FormHelperTextDocPage />,
   "forms-inputs/form-error-message": () => <FormErrorMessageDocPage />,
   "forms-inputs/field-message": () => <FieldMessageDocPage />,
+  "forms-inputs/editor": () => <EditorDocPage />,
+  "forms-inputs/form-wrapper": () => <FormWrapperDocPage />,
+  "forms-inputs/contact-form": () => <ContactFormDocPage />,
+  "forms-inputs/feedback-form": () => <FeedbackFormDocPage />,
+  "forms-inputs/coupon-field": () => <CouponFieldDocPage />,
+  "forms-inputs/copy-button": () => <CopyButtonFormsDocPage />,
+  "forms-inputs/field-select-modal": () => <FieldSelectModalDocPage />,
+  "forms-inputs/file-upload": () => <FormsFileUploadDocPage />,
+  "forms-inputs/file-uploader": () => <FileUploaderDocPage />,
   "feedback-overlays/alert": () => <AlertDocPage />,
   "feedback-overlays/alert-title": () => <AlertTitleDocPage />,
   "feedback-overlays/alert-description": () => <AlertDescriptionDocPage />,
