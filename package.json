@@ -6,6 +6,27 @@
   ],
   "description": "Luminet Design Library — React components with Tailwind v4 tokens",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pravin-pranesh/luminet-design-library.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pravin-pranesh/luminet-design-library/issues"
+  },
+  "homepage": "https://github.com/pravin-pranesh/luminet-design-library#readme",
+  "keywords": [
+    "luminet",
+    "design-system",
+    "react",
+    "components",
+    "tailwindcss",
+    "tailwind-v4",
+    "ui",
+    "cva"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "module",
   "sideEffects": [
     "**/*.css"
@@ -28,6 +49,7 @@
   ],
   "scripts": {
     "build": "tsup",
+    "prepublishOnly": "npm run build",
     "generate:catalog": "node scripts/generate-catalog.mjs",
     "dev": "npm run dev --prefix playground",
     "typecheck": "tsc --noEmit"
